@@ -40,7 +40,6 @@ jobs:
         KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
-        autoreconf -ivf
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
@@ -121,5 +120,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: Padavan-packages
+        name: Padavan-packages_$TNAME
         path: /opt/images
